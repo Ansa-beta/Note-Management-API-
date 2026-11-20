@@ -30,5 +30,6 @@ urlpatterns = [
     path('jwt_login/',TokenObtainPairView.as_view()),
     path('refresh/',TokenRefreshView.as_view()),
     path('task/',views.TaskListCreateView.as_view()),
-    path('task/<int:id>/',views.TaskRetrieveUpdateDeleteView.as_view())
+    path('task/<int:id>/',views.TaskRetrieveUpdateDeleteView.as_view()),
+    path('jwt_logout/',views.JWT_Logout.as_view())
 ]

@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from noteapp.models import NotesDb,TaskDb
 from rest_framework import permissions
 from rest_framework.exceptions import PermissionDenied
+from rest_framework_simplejwt.tokens import RefreshToken
 
 class RegistrationView(APIView):
     def post(self,request):
@@ -117,6 +118,21 @@ class TaskRetrieveUpdateDeleteView(APIView):
         return Response(data={
             "Message":"Deleted Successfully..."
         })
+
+class JWT_Logout(APIView):
+    permission_classes=[permissions.IsAuthenticated]
+    def post(self,request):
+        try:
+            refresh_token=request.data.get('refresh')
+            token=RefreshToken(refresh_token)
+            token.blacklist()
+            return Response({
+                "Message":"Logout successfully..."
+            })
+        except Exception:
+            return Response({
+                "Error":"Invalid refresh token"
+            })
 
 
 
