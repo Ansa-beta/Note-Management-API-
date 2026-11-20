@@ -1,0 +1,115 @@
+###
+POST http://127.0.0.1:8000/register/
+Content-Type:application/json
+
+{
+ "username":"Ansa",
+ "password":"ansa@123", 
+ "email":"ansa@gmail.com"
+}
+
+###
+POST http://127.0.0.1:8000/login/
+Content-Type:application/json
+
+{
+    "username":"Nandana",
+    "password":"nandana@123"
+}
+
+###
+GET http://127.0.0.1:8000/note/
+Accept:application/json
+Authorization:Token 16493594f59b3f7a928770b6e556d1606e68c2dc
+
+
+###
+POST http://127.0.0.1:8000/note/
+Content-Type:application/json
+Authorization:Token 16493594f59b3f7a928770b6e556d1606e68c2dc
+
+{
+    "title":"Daily routine",
+    "description":"My home daily routine."
+}
+
+###
+GET http://127.0.0.1:8000/note/1/
+Accept:application/json
+Authorization:Token 16493594f59b3f7a928770b6e556d1606e68c2dc
+
+
+###
+PUT http://127.0.0.1:8000/note/1/
+Content-Type:application/json
+Authorization:Token 16493594f59b3f7a928770b6e556d1606e68c2dc
+
+{
+    "title":"Introduction to python",
+    "description":"Python is a high-level programming language..."
+}
+
+###
+DELETE http://127.0.0.1:8000/note/2/
+Authorization:Token 16493594f59b3f7a928770b6e556d1606e68c2dc
+
+###
+POST http://127.0.0.1:8000/logout/
+Content-Type:application/json
+Authorization:Token 16493594f59b3f7a928770b6e556d1606e68c2dc
+
+###
+POST http://127.0.0.1:8000/jwt_login/
+Content-Type:application/json
+
+{
+    "username":"Ansa",
+    "password":"ansa@123"
+}
+
+###
+GET http://127.0.0.1:8000/task/
+Accept:application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTU2ODE4LCJpYXQiOjE3OTUxNTY1MTgsImp0aSI6ImEzZmE0YzRhMmY3NDQ4N2E4OThjZTU5MjE4ZThhZjI4IiwidXNlcl9pZCI6IjMifQ.Gk9YAQswC4SaNnnP58T5xATIHGBGsrWNLEd4O3qVZBk
+
+###
+POST http://127.0.0.1:8000/task/
+Content-Type:application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTU2ODE4LCJpYXQiOjE3OTUxNTY1MTgsImp0aSI6ImEzZmE0YzRhMmY3NDQ4N2E4OThjZTU5MjE4ZThhZjI4IiwidXNlcl9pZCI6IjMifQ.Gk9YAQswC4SaNnnP58T5xATIHGBGsrWNLEd4O3qVZBk
+
+{
+    "title":"Prime",
+    "description":"Python program to find the prime",
+    "due_date":"2026-11-20"
+}
+
+
+###
+POST http://127.0.0.1:8000/refresh/
+Content-Type:application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTU2ODE4LCJpYXQiOjE3OTUxNTY1MTgsImp0aSI6ImEzZmE0YzRhMmY3NDQ4N2E4OThjZTU5MjE4ZThhZjI4IiwidXNlcl9pZCI6IjMifQ.Gk9YAQswC4SaNnnP58T5xATIHGBGsrWNLEd4O3qVZBk
+
+{
+    "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5NTI0ODk4NCwiaWF0IjoxNzk1MTYyNTg0LCJqdGkiOiI5YTVkYmZmNTllZDA0MzEwOGJhY2YzNTU1YjY0MGZmZCIsInVzZXJfaWQiOiIzIn0.Kk3xzGeTXhW06kHvWA_m837YDUhQ0Pcm6cAuoztuqFk"
+}
+
+###
+GET http://127.0.0.1:8000/task/2/
+Accept:application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTY0MDk0LCJpYXQiOjE3OTUxNjM3OTQsImp0aSI6ImEyNWEwZjM1OGU0ZDQ5NWM5YTE5ZjhlMzUzN2E2ZDYzIiwidXNlcl9pZCI6IjMifQ.FctWEnGq90nOGe-5ZTjHbcn5-_eCfg6iraz1IRZjy5s
+
+
+###
+PUT http://127.0.0.1:8000/task/2/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTY0MDk0LCJpYXQiOjE3OTUxNjM3OTQsImp0aSI6ImEyNWEwZjM1OGU0ZDQ5NWM5YTE5ZjhlMzUzN2E2ZDYzIiwidXNlcl9pZCI6IjMifQ.FctWEnGq90nOGe-5ZTjHbcn5-_eCfg6iraz1IRZjy5s
+
+{
+  "title":"Prime",
+  "description":"Python program to check whether the given number is prime number or not",
+  "due_date":"2026-11-21"  
+}
+
+###
+DELETE http://127.0.0.1:8000/task/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTY0NDkyLCJpYXQiOjE3OTUxNjQxOTIsImp0aSI6IjI3MWYyMjY2MjFiMDQ4OTRhNmViYmM1NTQyODk5OGU5IiwidXNlcl9pZCI6IjMifQ.wtRrLqTj8lmHw4pPqMop9-AOd5ew-l97fYh5rJxl9lU
